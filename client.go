@@ -86,7 +86,7 @@ func NewClient(apiLogin string) (*Client, error) {
 		refreshTokenInterval: constants.DefaultRefreshTokenInterval,
 	}
 
-	resp, err := client.accessToken(&AccessTokenRequest{
+	resp, err := client.accessToken(AccessTokenRequest{
 		ApiLogin: client.apiLogin,
 	})
 	if err != nil {
