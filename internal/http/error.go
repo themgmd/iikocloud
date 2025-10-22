@@ -2,14 +2,10 @@ package http
 
 // ErrorResponse is a custom error type that represents iikoCloud API Error.
 type ErrorResponse struct {
-	// http.StatusCode of request.
-	StatusCode int `json:"-"`
-	// Operation ID [required]
-	CorrelationID string `json:"correlationId"`
-	// Error text [required]
+	StatusCode       int    `json:"-"`
+	CorrelationID    string `json:"correlationId"`
 	ErrorDescription string `json:"errorDescription"`
-	// Error code.
-	ErrorField string `json:"error"`
+	ErrorField       string `json:"error"`
 }
 
 // Error ...

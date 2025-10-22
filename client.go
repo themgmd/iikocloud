@@ -1,11 +1,12 @@
 package iikocloud
 
 import (
-	"github.com/themgmd/iikocloud/internal/constants"
 	"log/slog"
 	"net/http"
 	"os"
 	"time"
+
+	"github.com/themgmd/iikocloud/internal/constants"
 )
 
 // Client клиент для iikoCloud API

@@ -7,4 +7,5 @@ const (
 	V1Nomenclature        Endpoint = "/api/1/nomenclature"
 	V2Menu                Endpoint = "/api/2/menu"
 	V2MenuByID            Endpoint = "/api/2/menu/by_id"
+	V1Organizations       Endpoint = "/api/1/organizations"
 )

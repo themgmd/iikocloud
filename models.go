@@ -132,3 +132,25 @@ type PriceCategory struct {
 	Id   string `json:"id"`
 	Name string `json:"name"`
 }
+
+type Organization struct {
+	Country                           string   `json:"country"`
+	RestaurantAddress                 string   `json:"restaurantAddress"`
+	Latitude                          float64  `json:"latitude"`
+	Longitude                         float64  `json:"longitude"`
+	UseUAEAddressingSystem            bool     `json:"useUaeAddressingSystem"`
+	Version                           string   `json:"version"`
+	CurrencyIsoName                   string   `json:"currencyIsoName"`
+	CurrencyMinimumDenomination       float64  `json:"currencyMinimumDenomination"`
+	CountryPhoneCode                  string   `json:"countryPhoneCode"`
+	MarketingSourceRequiredInDelivery bool     `json:"marketingSourceRequiredInDelivery"`
+	DefaultDeliveryCityID             string   `json:"defaultDeliveryCityId"`
+	DeliveryCityIDs                   []string `json:"deliveryCityIds"`
+	DeliveryServiceType               string   `json:"deliveryServiceType"`
+	DefaultCallCenterPaymentTypeID    string   `json:"defaultCallCenterPaymentTypeId"`
+	OrderItemCommentEnabled           bool     `json:"orderItemCommentEnabled"`
+	INN                               string   `json:"inn"`
+	ResponseType                      string   `json:"responseType"`
+	ID                                string   `json:"id"`
+	Name                              string   `json:"name"`
+}
