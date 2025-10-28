@@ -8,4 +8,8 @@ const (
 	V2Menu                Endpoint = "/api/2/menu"
 	V2MenuByID            Endpoint = "/api/2/menu/by_id"
 	V1Organizations       Endpoint = "/api/1/organizations"
+	V1PaymentTypes        Endpoint = "/api/1/payment_types"
+	V1CalculateCheckin    Endpoint = "/api/1/loyalty/iiko/calculate"
+	V1CancelHoldMoney     Endpoint = "/api/1/loyalty/iiko/customer/wallet/cancel_hold"
+	V1CreateOrder         Endpoint = "/api/1//order/create"
 )
