@@ -155,7 +155,7 @@ type Organization struct {
 	Name                              string   `json:"name"`
 }
 
-type TerminalGroup struct {
+type TerminalGroupItem struct {
 	Id             string         `json:"id"`
 	OrganizationId string         `json:"organizationId"`
 	Name           string         `json:"name"`
@@ -165,18 +165,18 @@ type TerminalGroup struct {
 }
 
 type PaymentType struct {
-	Id                           string          `json:"id,omitempty"`
-	Code                         string          `json:"code,omitempty"`
-	Name                         string          `json:"name,omitempty"`
-	Comment                      string          `json:"comment,omitempty"`
-	Combinable                   bool            `json:"combinable,omitempty"`
-	ExternalRevision             int             `json:"externalRevision,omitempty"`
-	ApplicableMarketingCampaigns []string        `json:"applicableMarketingCampaigns,omitempty"`
-	IsDeleted                    bool            `json:"isDeleted,omitempty"`
-	PrintCheque                  bool            `json:"printCheque,omitempty"`
-	PaymentProcessingType        string          `json:"paymentProcessingType,omitempty"`
-	PaymentTypeKind              string          `json:"paymentTypeKind,omitempty"`
-	TerminalGroups               []TerminalGroup `json:"terminalGroups,omitempty"`
+	Id                           string              `json:"id,omitempty"`
+	Code                         string              `json:"code,omitempty"`
+	Name                         string              `json:"name,omitempty"`
+	Comment                      string              `json:"comment,omitempty"`
+	Combinable                   bool                `json:"combinable,omitempty"`
+	ExternalRevision             int                 `json:"externalRevision,omitempty"`
+	ApplicableMarketingCampaigns []string            `json:"applicableMarketingCampaigns,omitempty"`
+	IsDeleted                    bool                `json:"isDeleted,omitempty"`
+	PrintCheque                  bool                `json:"printCheque,omitempty"`
+	PaymentProcessingType        string              `json:"paymentProcessingType,omitempty"`
+	PaymentTypeKind              string              `json:"paymentTypeKind,omitempty"`
+	TerminalGroups               []TerminalGroupItem `json:"terminalGroups,omitempty"`
 }
 
 type Coordinates struct {
@@ -522,4 +522,89 @@ type CreateOrderSettings struct {
 	ServicePrint            bool `json:"servicePrint"`
 	TransportToFrontTimeout int  `json:"transportToFrontTimeout"`
 	CheckStopList           bool `json:"checkStopList"`
+}
+
+type Table struct {
+	Id              string `json:"id"`
+	Number          int    `json:"number"`
+	Name            string `json:"name"`
+	SeatingCapacity int    `json:"seatingCapacity"`
+	Revision        int    `json:"revision"`
+	IsDeleted       bool   `json:"isDeleted"`
+	PosId           string `json:"posId"`
+}
+
+type RestaurantSection struct {
+	Id              string  `json:"id"`
+	TerminalGroupId string  `json:"terminalGroupId"`
+	Name            string  `json:"name"`
+	Tables          []Table `json:"tables"`
+	Schema          struct {
+		Width        int `json:"width"`
+		Height       int `json:"height"`
+		MarkElements []struct {
+			Text string `json:"text"`
+			Font struct {
+				FontFamily string `json:"fontFamily"`
+				Size       int    `json:"size"`
+				FontStyle  string `json:"fontStyle"`
+			} `json:"font"`
+			Color struct {
+				A int `json:"a"`
+				R int `json:"r"`
+				G int `json:"g"`
+				B int `json:"b"`
+			} `json:"color"`
+			X      int `json:"x"`
+			Y      int `json:"y"`
+			Z      int `json:"z"`
+			Angle  int `json:"angle"`
+			Width  int `json:"width"`
+			Height int `json:"height"`
+		} `json:"markElements"`
+		TableElements []struct {
+			TableId string `json:"tableId"`
+			X       int    `json:"x"`
+			Y       int    `json:"y"`
+			Z       int    `json:"z"`
+			Angle   int    `json:"angle"`
+			Width   int    `json:"width"`
+			Height  int    `json:"height"`
+		} `json:"tableElements"`
+		RectangleElements []struct {
+			Color struct {
+				A int `json:"a"`
+				R int `json:"r"`
+				G int `json:"g"`
+				B int `json:"b"`
+			} `json:"color"`
+			X      int `json:"x"`
+			Y      int `json:"y"`
+			Z      int `json:"z"`
+			Angle  int `json:"angle"`
+			Width  int `json:"width"`
+			Height int `json:"height"`
+		} `json:"rectangleElements"`
+		EllipseElements []struct {
+			Color struct {
+				A int `json:"a"`
+				R int `json:"r"`
+				G int `json:"g"`
+				B int `json:"b"`
+			} `json:"color"`
+			X      int `json:"x"`
+			Y      int `json:"y"`
+			Z      int `json:"z"`
+			Angle  int `json:"angle"`
+			Width  int `json:"width"`
+			Height int `json:"height"`
+		} `json:"ellipseElements"`
+		Revision  int  `json:"revision"`
+		IsDeleted bool `json:"isDeleted"`
+	} `json:"schema"`
+}
+
+type TerminalGroup struct {
+	OrganizationId string              `json:"organizationId"`
+	Items          []TerminalGroupItem `json:"items"`
 }
