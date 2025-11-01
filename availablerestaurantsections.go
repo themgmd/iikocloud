@@ -21,7 +21,7 @@ type AvailableRestaurantSectionsResponse struct {
 }
 
 // AvailableRestaurantSections .
-func (c *Client) AvailableRestaurantSections(ctx context.Context, req AvailableRestaurantSectionsRequest, opts ...http.Option) (*AvailableRestaurantSectionsRequest, error) {
+func (c *Client) AvailableRestaurantSections(ctx context.Context, req AvailableRestaurantSectionsRequest, opts ...http.Option) (*AvailableRestaurantSectionsResponse, error) {
 	path, err := url.JoinPath(c.baseURL, constants.V1AvailableRestaurantSection)
 	if err != nil {
 		return nil, fmt.Errorf("url.JoinPath: %w", err)
@@ -32,7 +32,7 @@ func (c *Client) AvailableRestaurantSections(ctx context.Context, req AvailableR
 	// запрос требует авторизации
 	opts = append(opts, http.WithAuthorization(c.token))
 
-	resp, err := http.DoRequest[AvailableRestaurantSectionsRequest, AvailableRestaurantSectionsRequest](ctx, c.httpClient, path, req, opts...)
+	resp, err := http.DoRequest[AvailableRestaurantSectionsRequest, AvailableRestaurantSectionsResponse](ctx, c.httpClient, path, req, opts...)
 	if err != nil {
 		return nil, fmt.Errorf("http.DoRequest: %w", err)
 	}
