@@ -13,5 +13,5 @@ const (
 	V1CancelHoldMoney            Endpoint = "/api/1/loyalty/iiko/customer/wallet/cancel_hold"
 	V1CreateOrder                Endpoint = "/api/1//order/create"
 	V1AvailableRestaurantSection Endpoint = "/api/1/reserve/available_restaurant_sections"
-	V1TerminalGroups             Endpoint = "/api/1/reserve/terminal_groups"
+	V1TerminalGroups             Endpoint = "/api/1/terminal_groups"
 )
