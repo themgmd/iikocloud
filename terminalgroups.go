@@ -22,7 +22,7 @@ type TerminalGroupsResponse struct {
 
 // TerminalGroups .
 func (c *Client) TerminalGroups(ctx context.Context, req TerminalGroupsRequest, opts ...http.Option) (*TerminalGroupsResponse, error) {
-	path, err := url.JoinPath(c.baseURL, constants.V1AvailableRestaurantSection)
+	path, err := url.JoinPath(c.baseURL, constants.V1TerminalGroups)
 	if err != nil {
 		return nil, fmt.Errorf("url.JoinPath: %w", err)
 	}
