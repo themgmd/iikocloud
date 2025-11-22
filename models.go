@@ -608,3 +608,9 @@ type TerminalGroup struct {
 	OrganizationId string              `json:"organizationId"`
 	Items          []TerminalGroupItem `json:"items"`
 }
+
+type Region struct {
+	Id        string `json:"id"`
+	Name      string `json:"name"`
+	IsDeleted bool   `json:"isDeleted"`
+}
