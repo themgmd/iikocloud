@@ -94,6 +94,9 @@
 - **CustomerWalletRefund** - Возврат средств (`/api/1/loyalty/iiko/customer/wallet/refund`)
   - Метод `CustomerWalletRefund()` для возврата средств на кошелек клиента
 
+- **CustomerWalletChargeOff** - Списание средств (`/api/1/loyalty/iiko/customer/wallet/chargeoff`)
+  - Метод `CustomerWalletChargeOff()` для списания средств с кошелька клиента
+
 #### Работа с купонами
 
 - **Coupons** - Получение информации о купонах (`/api/1/loyalty/iiko/coupons`)

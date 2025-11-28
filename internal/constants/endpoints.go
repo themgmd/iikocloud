@@ -35,6 +35,7 @@ const (
 	V1CustomerWalletHistory      Endpoint = "/api/1/loyalty/iiko/customer/wallet/history"
 	V1CustomerWalletHold         Endpoint = "/api/1/loyalty/iiko/customer/wallet/hold"
 	V1CustomerWalletRefund       Endpoint = "/api/1/loyalty/iiko/customer/wallet/refund"
+	V1CustomerWalletChargeOff    Endpoint = "/api/1/loyalty/iiko/customer/wallet/chargeoff"
 	V1OrderTypes                 Endpoint = "/api/1/order_types"
 	V1DeliveryZones              Endpoint = "/api/1/delivery/zones"
 	V1MarketingSources           Endpoint = "/api/1/marketing_sources"
