@@ -11,6 +11,9 @@ import (
 
 // MenuByIDRequest .
 type MenuByIDRequest struct {
+	ExternalMenuId  string   `json:"externalMenuId"`
+	OrganizationIds []string `json:"organizationIds"`
+	Version         int      `json:"version"`
 }
 
 // TaxCategory .
