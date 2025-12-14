@@ -62,7 +62,7 @@ type Interval struct {
 // ComboSizePrice .
 type ComboSizePrice struct {
 	Organizations []string `json:"organizations"`
-	Price         string   `json:"price"`
+	Price         float64  `json:"price"`
 	TaxCategoryId string   `json:"taxCategoryId"`
 }
 
@@ -141,20 +141,20 @@ type Barcode struct {
 
 // ItemGroupNutrition .
 type ItemGroupNutrition struct {
-	Fats               int      `json:"fats"`
-	Proteins           int      `json:"proteins"`
-	Carbs              int      `json:"carbs"`
-	Energy             int      `json:"energy"`
+	Fats               float64  `json:"fats"`
+	Proteins           float64  `json:"proteins"`
+	Carbs              float64  `json:"carbs"`
+	Energy             float64  `json:"energy"`
 	Organizations      []string `json:"organizations"`
-	SaturatedFattyAcid int      `json:"saturatedFattyAcid"`
-	Salt               int      `json:"salt"`
-	Sugar              int      `json:"sugar"`
+	SaturatedFattyAcid float64  `json:"saturatedFattyAcid"`
+	Salt               float64  `json:"salt"`
+	Sugar              float64  `json:"sugar"`
 }
 
 // ItemGroupPrice .
 type ItemGroupPrice struct {
 	Organizations []string `json:"organizations"`
-	Price         string   `json:"price"`
+	Price         float64  `json:"price"`
 	TaxCategoryId string   `json:"taxCategoryId"`
 }
 
