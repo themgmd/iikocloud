@@ -28,7 +28,7 @@ type AllergenGroup struct {
 	Id        string `json:"id"`
 	Code      string `json:"code"`
 	Name      string `json:"name"`
-	IsDeleted string `json:"isDeleted"`
+	IsDeleted bool   `json:"isDeleted"`
 }
 
 // CustomerTagGroup .
@@ -172,7 +172,7 @@ type ItemModifierGroupItem struct {
 	Sku                 string                      `json:"sku"`
 	Name                string                      `json:"name"`
 	Description         string                      `json:"description"`
-	Restrictions        []Restrictions              `json:"restrictions"`
+	Restrictions        Restrictions                `json:"restrictions"`
 	IsHidden            bool                        `json:"isHidden"`
 	Prices              []ItemGroupPrice            `json:"prices"`
 	Nutritions          []ItemGroupNutrition        `json:"nutritions"`
