@@ -28,7 +28,7 @@ type AllergenGroup struct {
 	Id        string `json:"id"`
 	Code      string `json:"code"`
 	Name      string `json:"name"`
-	IsDeleted string `json:"isDeleted"`
+	IsDeleted bool   `json:"isDeleted"`
 }
 
 // CustomerTagGroup .
