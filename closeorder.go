@@ -10,8 +10,9 @@ import (
 )
 
 type CloseOrderRequest struct {
-	OrganizationId string `json:"organizationId"`
-	OrderId        string `json:"orderId"`
+	ChequeAdditionalInfo ChequeAdditionalInfo `json:"chequeAdditionalInfo"`
+	OrganizationId       string               `json:"organizationId"`
+	OrderId              string               `json:"orderId"`
 }
 
 type CloseOrderResponse struct {
@@ -35,4 +36,3 @@ func (c *Client) CloseOrder(ctx context.Context, req CloseOrderRequest, opts ...
 
 	return resp, nil
 }
-
