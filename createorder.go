@@ -8,6 +8,39 @@ import (
 	"net/url"
 )
 
+// CreateOrder .
+type CreateOrder struct {
+	Id                   string               `json:"id,omitempty"`
+	ExternalNumber       string               `json:"externalNumber,omitempty"`
+	TableIds             []string             `json:"tableIds,omitempty"`
+	Customer             CreateOrderCustomer  `json:"customer,omitempty"`
+	Phone                string               `json:"phone,omitempty"`
+	PhoneExtension       string               `json:"phoneExtension,omitempty"`
+	GuestCount           int                  `json:"guestCount,omitempty"`
+	Guests               GuestsInfo           `json:"guests,omitempty"`
+	TabName              string               `json:"tabName,omitempty"`
+	MenuId               interface{}          `json:"menuId,omitempty"`
+	PriceCategoryId      string               `json:"priceCategoryId,omitempty"`
+	OrderTypeId          string               `json:"orderTypeId,omitempty"`
+	OrderServiceType     string               `json:"orderServiceType,omitempty"`
+	DeliveryPoint        DeliveryPoint        `json:"deliveryPoint,omitempty"`
+	Comment              string               `json:"comment,omitempty"`
+	MarketingSourceId    string               `json:"marketingSourceId,omitempty"`
+	OperatorId           string               `json:"operatorId,omitempty"`
+	DeliveryDuration     int                  `json:"deliveryDuration,omitempty"`
+	DeliveryZone         string               `json:"deliveryZone,omitempty"`
+	Items                []OrderItem          `json:"items,omitempty"`
+	Combos               []OrderCombo         `json:"combos,omitempty"`
+	Payments             []Payment            `json:"payments,omitempty"`
+	Tips                 []Tip                `json:"tips,omitempty"`
+	SourceKey            string               `json:"sourceKey,omitempty"`
+	DiscountsInfo        DiscountsInfo        `json:"discountsInfo,omitempty"`
+	LoyaltyInfo          LoyaltyInfo          `json:"loyaltyInfo,omitempty"`
+	ChequeAdditionalInfo ChequeAdditionalInfo `json:"chequeAdditionalInfo,omitempty"`
+	ExternalData         []ExternalData       `json:"externalData,omitempty"`
+	CompleteBefore       string               `json:"completeBefore,omitempty"`
+}
+
 // CreateOrderCustomer расширенная структура клиента для создания заказа
 type CreateOrderCustomer struct {
 	OrderCustomer
@@ -18,39 +51,9 @@ type CreateOrderCustomer struct {
 
 // CreateOrderRequest структура запроса для создания заказа
 type CreateOrderRequest struct {
-	OrganizationId  string `json:"organizationId"`
-	TerminalGroupId string `json:"terminalGroupId"`
-	Order           struct {
-		Id                   string                `json:"id,omitempty"`
-		ExternalNumber       string                `json:"externalNumber,omitempty"`
-		TableIds             []string              `json:"tableIds,omitempty"`
-		Customer             CreateOrderCustomer   `json:"customer,omitempty"`
-		Phone                string                `json:"phone,omitempty"`
-		PhoneExtension       string                `json:"phoneExtension,omitempty"`
-		GuestCount           int                   `json:"guestCount,omitempty"`
-		Guests               GuestsInfo            `json:"guests,omitempty"`
-		TabName              string                `json:"tabName,omitempty"`
-		MenuId               interface{}           `json:"menuId,omitempty"`
-		PriceCategoryId      string                `json:"priceCategoryId,omitempty"`
-		OrderTypeId          string                `json:"orderTypeId,omitempty"`
-		OrderServiceType     string                `json:"orderServiceType,omitempty"`
-		DeliveryPoint        DeliveryPoint         `json:"deliveryPoint,omitempty"`
-		Comment              string                `json:"comment,omitempty"`
-		MarketingSourceId    string                `json:"marketingSourceId,omitempty"`
-		OperatorId           string                `json:"operatorId,omitempty"`
-		DeliveryDuration     int                   `json:"deliveryDuration,omitempty"`
-		DeliveryZone         string                `json:"deliveryZone,omitempty"`
-		Items                []OrderItem           `json:"items,omitempty"`
-		Combos               []OrderCombo          `json:"combos,omitempty"`
-		Payments             []Payment             `json:"payments,omitempty"`
-		Tips                 []Tip                 `json:"tips,omitempty"`
-		SourceKey            string                `json:"sourceKey,omitempty"`
-		DiscountsInfo        DiscountsInfo         `json:"discountsInfo,omitempty"`
-		LoyaltyInfo          LoyaltyInfo           `json:"loyaltyInfo,omitempty"`
-		ChequeAdditionalInfo ChequeAdditionalInfo  `json:"chequeAdditionalInfo,omitempty"`
-		ExternalData         []ExternalData        `json:"externalData,omitempty"`
-		CompleteBefore       string                `json:"completeBefore,omitempty"`
-	} `json:"order"`
+	OrganizationId      string              `json:"organizationId"`
+	TerminalGroupId     string              `json:"terminalGroupId"`
+	Order               CreateOrder         `json:"order"`
 	CreateOrderSettings CreateOrderSettings `json:"createOrderSettings,omitempty"`
 }
 
