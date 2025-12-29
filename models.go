@@ -313,8 +313,11 @@ type Order struct {
 }
 
 type OrderItem struct {
+	ProductID        string           `json:"productId"`
+	PositionId       string           `json:"positionId"`
+	Price            float64          `json:"price"`
 	Type             string           `json:"type"`
-	Amount           int              `json:"amount"`
+	Amount           float64          `json:"amount"`
 	ProductSizeId    string           `json:"productSizeId"`
 	ComboInformation ComboInformation `json:"comboInformation"`
 	Comment          string           `json:"comment"`
@@ -365,7 +368,10 @@ type Card struct {
 }
 
 type Discount struct {
-	Type string `json:"type"`
+	Type               string   `json:"type"`
+	DiscountTypeId     string   `json:"discountTypeId"`
+	Sum                float64  `json:"sum"`
+	SelectivePositions []string `json:"selectivePositions"`
 }
 
 type LoyaltyInfo struct {
@@ -374,10 +380,12 @@ type LoyaltyInfo struct {
 }
 
 type ChequeAdditionalInfo struct {
-	NeedReceipt     bool   `json:"needReceipt"`
-	Email           string `json:"email"`
-	SettlementPlace string `json:"settlementPlace"`
-	Phone           string `json:"phone"`
+	NeedReceipt       bool   `json:"needReceipt"`
+	Email             string `json:"email"`
+	SettlementPlace   string `json:"settlementPlace"`
+	Phone             string `json:"phone"`
+	RetailAddress     string `json:"retailAddress"`
+	IsInternetPayment bool   `json:"isInternetPayment"`
 }
 
 type ExternalData struct {
